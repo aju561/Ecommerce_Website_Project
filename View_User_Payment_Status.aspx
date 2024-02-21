@@ -1,10 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="View_User_Details.aspx.cs" Inherits="Project_1.View_User_Details" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="View_User_Payment_Status.aspx.cs" Inherits="Project_1.View_User_Payment_Status" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            height: 32px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
@@ -18,21 +13,6 @@
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style1"></td>
-            <td class="auto-style1"></td>
-            <td class="auto-style1"></td>
-            <td class="auto-style1"></td>
-            <td class="auto-style1"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -44,23 +24,16 @@
                                 <td>
                                     <asp:GridView ID="GridView1" runat="server">
                                         <Columns>
-                                            <asp:TemplateField HeaderText="Block/Unblock User">
+                                            <asp:TemplateField HeaderText="Order Status">
                                                 <ItemTemplate>
-                                                    <table class="w-100">
-                                                        <tr>
-                                                            <td>
-                                                                <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("User_Id") %>' ForeColor="Red" OnCommand="LinkButton1_Command">Block</asp:LinkButton>
-                                                            </td>
-                                                            <td>
-                                                                <asp:LinkButton ID="LinkButton2" runat="server" CommandArgument='<%# Eval("User_Id") %>' ForeColor="Lime" OnCommand="LinkButton2_Command">Unblock </asp:LinkButton>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                    <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("Order_Id") %>' OnCommand="LinkButton1_Command" ForeColor="Red">Set Delivered</asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
                                     </asp:GridView>
                                 </td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
@@ -72,10 +45,6 @@
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
@@ -83,7 +52,6 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </td>
-            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>

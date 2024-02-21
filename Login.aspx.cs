@@ -28,8 +28,7 @@ namespace Project_1
                 string str2 = "select Login_Type from Login where username ='" + TextBox1.Text + "'and password = '" + TextBox2.Text + "'";
                 string logtype = obj.Fn_Scalar(str2);
 
-                string str3 = "select User_Status from User_Tab where User_Id="+Session["userid"]+"";
-                string logstat = obj.Fn_Scalar(str3);
+                
 
                 if (logtype == "Admin")
                 {
@@ -38,7 +37,9 @@ namespace Project_1
                 }
                 else if (logtype == "user")
                 {
-                    if (logstat == "active")
+                    string str3 = "select User_Status from User_Tab where User_Id=" + Session["userid"] + "";
+                    string logstat = obj.Fn_Scalar(str3);
+                    if (logstat == "Active")
                     {
                         Response.Redirect("User_Home.aspx");
                         

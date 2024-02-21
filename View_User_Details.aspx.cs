@@ -24,30 +24,28 @@ namespace Project_1
             GridView1.DataBind();
         }
 
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void LinkButton1_Command(object sender, CommandEventArgs e)
         {
-            GridView1.EditIndex = e.NewEditIndex;
-            Bind_Grid();
+            int getuid = Convert.ToInt32(e.CommandArgument);
+            string upt = "update User_Tab set User_Status='Blocked' where User_Id = " + getuid + "";
+            int i = ob.Fn_Nonquery(upt);
+            if (i != 0)
+            {
+                Label1.Text = "Successfully Blocked User";
+                Bind_Grid();
+            }
         }
 
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        protected void LinkButton2_Command(object sender, CommandEventArgs e)
         {
-
-            GridView1.EditIndex = -1;
-            Bind_Grid();
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            int i = e.RowIndex;
-            int getid = Convert.ToInt32(GridView1.DataKeys[i].Value);
-
-            TextBox txtstat = (TextBox)GridView1.Rows[i].Cells[11].Controls[0];
-          
-            string strup = "update User_Tab set User_Status='" + txtstat.Text + "' where User_Id=" + getid + "";
-            ob.Fn_Nonquery(strup);
-            GridView1.EditIndex = -1;
-            Bind_Grid();
-        }
+            int getuid = Convert.ToInt32(e.CommandArgument);
+            string upt = "update User_Tab set User_Status='Active' where User_Id = " + getuid + "";
+            int i = ob.Fn_Nonquery(upt);
+            if (i != 0)
+            {
+                Label1.Text = "Successfully Unblocked User";
+                Bind_Grid();
+            }
+        }    
     }
 }

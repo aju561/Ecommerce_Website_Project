@@ -31,7 +31,7 @@
             width: 139px;
         }
         .auto-style10 {
-            margin-left: 37px;
+            margin-left: 13px;
         }
         .auto-style11 {
             width: 61px;
@@ -59,13 +59,19 @@
         .auto-style17 {
             height: 32px;
         }
+        .auto-style18 {
+            width: 164px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="w-100">
         <tr>
             <td class="auto-style5"></td>
-            <td class="auto-style3"></td>
+            <td class="auto-style3">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+            </td>
             <td class="auto-style2">&nbsp;</td>
             <td class="auto-style2"></td>
         </tr>
@@ -181,17 +187,38 @@
         <tr>
             <td class="auto-style11"></td>
             <td class="auto-style12">
-                <asp:Panel ID="Panel2" runat="server">
-                    <table class="w-100">
-                        <tr>
-                            <td>
-                                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add To Cart" />
-                                <asp:Button ID="Button2" runat="server" CssClass="auto-style10" OnClick="Button2_Click" Text="Continue" Width="164px" />
-                            </td>
-                            <td>&nbsp;</td>
-                        </tr>
-                    </table>
-                </asp:Panel>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <table class="w-100">
+                            <tr>
+                                <td>
+                                    <table class="w-100">
+                                        <tr>
+                                            <td class="auto-style18">
+                                                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add To Cart" />
+                                            </td>
+                                            <td>
+                                                <asp:Button ID="Button2" runat="server" CssClass="auto-style10" OnClick="Button2_Click" Text="Continue" Width="164px" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style18">
+                                                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="View Cart" />
+                                            </td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style18">
+                                                <asp:Label ID="Label5" runat="server"></asp:Label>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </td>
             <td class="auto-style13">&nbsp;</td>
             <td class="auto-style13"></td>
@@ -199,16 +226,14 @@
         <tr>
             <td class="auto-style6">&nbsp;</td>
             <td class="auto-style1">
-                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="View Cart" />
-            </td>
+                &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style6">&nbsp;</td>
             <td class="auto-style1">
-                <asp:Label ID="Label5" runat="server"></asp:Label>
-            </td>
+                &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>

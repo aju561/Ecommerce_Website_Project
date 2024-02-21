@@ -67,6 +67,16 @@
         <tr>
             <td class="auto-style2">&nbsp;</td>
             <td class="auto-style4">
+                <asp:HyperLink ID="HyperLink7" runat="server" Font-Size="Large" ForeColor="Gray" NavigateUrl="~/View_User_Payment_Status.aspx">Payment Status</asp:HyperLink>
+            </td>
+            <td class="auto-style1">&nbsp;</td>
+            <td class="auto-style1">&nbsp;</td>
+            <td class="auto-style1">&nbsp;</td>
+            <td class="auto-style1">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style2">&nbsp;</td>
+            <td class="auto-style4">
                 &nbsp;</td>
             <td class="auto-style1">&nbsp;</td>
             <td class="auto-style1">&nbsp;</td>
@@ -166,7 +176,7 @@
         <tr>
             <td class="auto-style2">&nbsp;</td>
             <td class="auto-style4">
-                <asp:HyperLink ID="HyperLink4" runat="server" Font-Size="Large" ForeColor="Gray">Edit Product</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink4" runat="server" Font-Size="Large" ForeColor="Gray" NavigateUrl="~/Edit_Product.aspx">Edit Product</asp:HyperLink>
             </td>
             <td class="auto-style1">&nbsp;</td>
             <td class="auto-style1">&nbsp;</td>

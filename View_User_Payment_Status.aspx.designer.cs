@@ -11,7 +11,7 @@ namespace Project_1
 {
 
 
-    public partial class View_User_Details
+    public partial class View_User_Payment_Status
     {
 
         /// <summary>

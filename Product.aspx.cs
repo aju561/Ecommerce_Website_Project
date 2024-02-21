@@ -25,10 +25,7 @@ namespace Project_1
             }
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("User_Home.aspx");
-        }
+     
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -55,6 +52,11 @@ namespace Project_1
             {
                 Label5.Text = "Added To Cart";
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("User_Home.aspx");
         }
 
         protected void Button3_Click(object sender, EventArgs e)

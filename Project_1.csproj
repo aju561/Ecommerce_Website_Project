@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,8 +73,27 @@
     <Content Include="Add_Category.aspx" />
     <Content Include="AdminReg.aspx" />
     <Content Include="Admin_Home.aspx" />
+    <Content Include="C IMAGES\laptopcar.jpg" />
+    <Content Include="C IMAGES\smartcar.jpeg" />
+    <Content Include="C IMAGES\washingcar.jpg" />
     <Content Include="cart.html" />
+    <Content Include="CAT PHOTOS\fridge.jfif" />
+    <Content Include="CAT PHOTOS\images.jfif" />
+    <Content Include="CAT PHOTOS\Screenshot 2024-02-03 230015.png" />
+    <Content Include="CAT PHOTOS\Screenshot 2024-02-03 230100.png" />
+    <Content Include="CAT PHOTOS\Screenshot 2024-02-03 230246.png" />
     <Content Include="checkout.html" />
+    <Content Include="Connected Services\Bank_Payment\Project_1.Bank_Payment.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="CAT PHOTOS\asus.jpg.webp" />
+    <None Include="Connected Services\Bank_Payment\Service.disco" />
+    <None Include="Connected Services\Bank_Payment\configuration91.svcinfo" />
+    <None Include="Connected Services\Bank_Payment\configuration.svcinfo" />
+    <None Include="Connected Services\Bank_Payment\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="contact.html" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
@@ -86,6 +107,8 @@
     <Content Include="Edit_Category.aspx" />
     <Content Include="Edit_Product.aspx" />
     <Content Include="Homepage.aspx" />
+    <Content Include="Home_Products.aspx" />
+    <Content Include="Home_View_Product.aspx" />
     <Content Include="img\carousel-1.jpg" />
     <Content Include="img\carousel-2.jpg" />
     <Content Include="img\carousel-3.jpg" />
@@ -134,14 +157,17 @@
     <Content Include="mail\contact.php" />
     <Content Include="mail\jqBootstrapValidation.min.js" />
     <Content Include="online-shop-website-template.jpg" />
+    <Content Include="Payment_Bridge.aspx" />
     <Content Include="Product.aspx" />
     <Content Include="READ-ME.txt" />
     <Content Include="shop.html" />
     <Content Include="UserReg.aspx" />
     <Content Include="User_Home.aspx" />
+    <Content Include="View_Bill.aspx" />
     <Content Include="View_Cart.aspx" />
     <Content Include="View_Products.aspx" />
     <Content Include="View_User_Details.aspx" />
+    <Content Include="View_User_Payment_Status.aspx" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
   </ItemGroup>
@@ -175,6 +201,11 @@
       <DependentUpon>Admin_Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConCls.cs" />
+    <Compile Include="Connected Services\Bank_Payment\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Edit_Category.aspx.cs">
       <DependentUpon>Edit_Category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -195,6 +226,27 @@
     </Compile>
     <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home_Products.aspx.cs">
+      <DependentUpon>Home_Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home_Products.aspx.designer.cs">
+      <DependentUpon>Home_Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home_View_Product.aspx.cs">
+      <DependentUpon>Home_View_Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home_View_Product.aspx.designer.cs">
+      <DependentUpon>Home_View_Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Bridge.aspx.cs">
+      <DependentUpon>Payment_Bridge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment_Bridge.aspx.designer.cs">
+      <DependentUpon>Payment_Bridge.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
@@ -232,6 +284,13 @@
     <Compile Include="User_Home.aspx.designer.cs">
       <DependentUpon>User_Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View_Bill.aspx.cs">
+      <DependentUpon>View_Bill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_Bill.aspx.designer.cs">
+      <DependentUpon>View_Bill.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View_Cart.aspx.cs">
       <DependentUpon>View_Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,9 +312,26 @@
     <Compile Include="View_User_Details.aspx.designer.cs">
       <DependentUpon>View_User_Details.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View_User_Payment_Status.aspx.cs">
+      <DependentUpon>View_User_Payment_Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_User_Payment_Status.aspx.designer.cs">
+      <DependentUpon>View_User_Payment_Status.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\owlcarousel\LICENSE" />
+    <None Include="Connected Services\Bank_Payment\Service.wsdl" />
+    <None Include="Connected Services\Bank_Payment\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Bank_Payment\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Bank_Payment\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="scss\bootstrap\scss\bootstrap-grid.scss" />
@@ -359,6 +435,12 @@
   <ItemGroup>
     <Folder Include="Category_Images\" />
     <Folder Include="Product Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Bank_Payment\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -49,7 +49,15 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                &nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <asp:Button ID="Button1" runat="server" Text="Confirm" OnClick="Button1_Click" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -58,15 +66,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="Confirm" />
-            </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+                &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

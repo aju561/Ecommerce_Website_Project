@@ -8,26 +8,28 @@ using System.Data;
 
 namespace Project_1
 {
-    public partial class Homepage : System.Web.UI.Page
+    public partial class Home_Products : System.Web.UI.Page
     {
         ConCls ob = new ConCls();
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
-                string sel = "select * from Category where Category_Status='Available'";
+                string sel = "select * from Product where Category_Id=" + Session["hcatid"] + "";
                 DataSet ds = ob.Fn_DataSet(sel);
                 DataList1.DataSource = ds;
                 DataList1.DataBind();
+                
             }
         }
 
-        protected void ImageButton1_Command(object sender, CommandEventArgs e)
+        
+
+        protected void ImageButton1_Command1(object sender, CommandEventArgs e)
         {
-            int caid = Convert.ToInt32(e.CommandArgument);
-            Session["hcatid"] = caid;
-            Response.Redirect("Home_Products.aspx");
+            int proid = Convert.ToInt32(e.CommandArgument);
+            Session["hpid"] = proid;
+            Response.Redirect("Home_View_Product.aspx");
         }
     }
 }
